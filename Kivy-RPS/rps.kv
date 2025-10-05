@@ -1,28 +1,81 @@
-<GameGridLayout>
+<GameLayout>
 
-    rock:rock
-    paper:paper
-    scissors:scissors
     scoreStatus:scoreStatus
+    rock:rock
 
     GridLayout:
+        
         cols: 1
         size: root.width, root.height
+        pos_hint: {"center_x": 0.5}
+        pos_hint: {"center_y": 0.5}
 
-        GridLayout:
-            cols: 3
+        Label:
+            text: "ROCK PAPER SCISSORS"
+            font_size: 24
+            bold: True
+            size_hint: (0.5, 0.2)
+            pos_hint: {"center_x": 0.5}
+            color: 0, 0, 0, 1
+            
+            canvas.after:
+                Color:
+                    rgba: 0, 0, 0, 1
+                Line:
+                    points: self.x, self.y, self.right, self.y
+                    width: 2
+
+        BoxLayout:
+        
+            orientation: "horizontal"
+            spacing: 20
+            padding: 20
+            size_hint: (0.5, 0.5)
 
             Button:
-                id: rock
-                text: "Rock"
+                background_normal: ""
+                background_color: 151/255, 188/255, 98/255, 1
+                size_hint: (0.5, None)
+                pos_hint: {"center_y": 0.5}
+                height: 150
+
+                Image:
+                    source: "resources/stationery-stacked-papers.png"
+                    center_x: self.parent.center_x
+                    center_y: self.parent.center_y
+
+            Button:
+                background_normal: ""
+                background_color: 151/255, 188/255, 98/255, 1
+                size_hint: (0.5, None)
+                pos_hint: {"center_y": 0.5}
+                height: 150
+
+                Image:
+                    source: "resources/scissors.png"
+                    center_x: self.parent.center_x
+                    center_y: self.parent.center_y
+
+            Button:
+                background_normal: ""
+                background_color: 151/255, 188/255, 98/255, 1
+                size_hint:(0.5, None)
+                pos_hint: {"center_y": 0.5}
+                height: 150
                 on_press: root.press(self)
-            Button:
-                id: paper
-                text: "Paper"
-            Button:
-                id: scissors
-                text: "Scissors"
+                id: rock
+
+                Image:
+                    source: "resources/protest.png"
+                    center_x: self.parent.center_x
+                    center_y: self.parent.center_y
+
 
         Label:
             id: scoreStatus
-            text: "Label!"
+            text: "test!"
+            color: 0,0,0,1
+
+
+
+

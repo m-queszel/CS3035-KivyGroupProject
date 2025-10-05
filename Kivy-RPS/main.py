@@ -1,16 +1,10 @@
 from kivy.app import App
-from kivy.uix.label import Label
 from kivy.uix.widget import Widget
-from kivy.properties import ObjectProperty
-from kivy.uix.textinput import TextInput
-from kivy.uix.button import Button
+from kivy.core.window import Window
 
 
-class GameGridLayout(Widget):
-    rock = ObjectProperty(None)
-    paper = ObjectProperty(None)
-    scissors = ObjectProperty(None)
-    scoreStatus = ObjectProperty(None)
+class GameLayout(Widget):
+    pass
 
     def press(self, instance):
         self.scoreStatus.text = "changed!"
@@ -18,7 +12,8 @@ class GameGridLayout(Widget):
 
 class RPSApp(App):
     def build(self):
-        return GameGridLayout()
+        Window.clearcolor = (1, 1, 1, 1)
+        return GameLayout()
 
 
 if __name__ == '__main__':
