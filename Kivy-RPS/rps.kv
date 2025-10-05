@@ -1,6 +1,8 @@
 <GameLayout>
 
     scoreStatus:scoreStatus
+    scissors:scissors
+    paper:paper
     rock:rock
 
     GridLayout:
@@ -38,6 +40,8 @@
                 size_hint: (0.5, None)
                 pos_hint: {"center_y": 0.5}
                 height: 150
+                on_press: root.pressPaper(self)
+                id: paper
 
                 Image:
                     source: "resources/stationery-stacked-papers.png"
@@ -50,6 +54,8 @@
                 size_hint: (0.5, None)
                 pos_hint: {"center_y": 0.5}
                 height: 150
+                on_press: root.pressScissors(self)
+                id: scissors
 
                 Image:
                     source: "resources/scissors.png"
@@ -62,7 +68,7 @@
                 size_hint:(0.5, None)
                 pos_hint: {"center_y": 0.5}
                 height: 150
-                on_press: root.press(self)
+                on_press: root.pressRock(self)
                 id: rock
 
                 Image:
