@@ -4,6 +4,7 @@
     scissors:scissors
     paper:paper
     rock:rock
+    computerRoll:computerRoll
 
     GridLayout:
         
@@ -32,7 +33,7 @@
             orientation: "horizontal"
             spacing: 20
             padding: 20
-            size_hint: (0.5, 0.5)
+            size_hint: (0.5, 0.3)
 
             Button:
                 background_normal: ""
@@ -76,12 +77,17 @@
                     center_x: self.parent.center_x
                     center_y: self.parent.center_y
 
-
+        Label:
+            id: computerRoll
+            font_size: 20
+            text: "Select your throw!"
+            color: 0, 0, 0, 1
+            size_hint: (0.5, 0.5)
+        
         Label:
             id: scoreStatus
-            text: "test!"
+            font_size: 20
             color: 0,0,0,1
-
-
+            size_hint: (0.5, 0.5)
 
 
