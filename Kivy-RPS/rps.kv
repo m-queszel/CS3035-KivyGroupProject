@@ -1,5 +1,28 @@
-<rpsGame>:
-    BoxLayout:
-        Button:
-            text: 'Button 1'
-            size_hint: 1, 1
+<GameGridLayout>
+
+    rock:rock
+    paper:paper
+    scissors:scissors
+    scoreStatus:scoreStatus
+
+    GridLayout:
+        cols: 1
+        size: root.width, root.height
+
+        GridLayout:
+            cols: 3
+
+            Button:
+                id: rock
+                text: "Rock"
+                on_press: root.press(self)
+            Button:
+                id: paper
+                text: "Paper"
+            Button:
+                id: scissors
+                text: "Scissors"
+
+        Label:
+            id: scoreStatus
+            text: "Label!"
