@@ -1,23 +1,25 @@
 <GameLayout>
 
-    scoreStatus:scoreStatus
+    winLabel:winLabel
     scissors:scissors
     paper:paper
     rock:rock
     computerRoll:computerRoll
+    score:score
 
     GridLayout:
         
         cols: 1
         size: root.width, root.height
         pos_hint: {"center_x": 0.5}
-        pos_hint: {"center_y": 0.5}
+        spacing: 20
+        padding: 20
 
         Label:
             text: "ROCK PAPER SCISSORS"
             font_size: 24
             bold: True
-            size_hint: (0.5, 0.2)
+            size_hint: (1, 0.2)
             pos_hint: {"center_x": 0.5}
             color: 0, 0, 0, 1
             
@@ -33,7 +35,7 @@
             orientation: "horizontal"
             spacing: 20
             padding: 20
-            size_hint: (0.5, 0.3)
+            size_hint: (1, 0.5)
 
             Button:
                 background_normal: ""
@@ -82,12 +84,17 @@
             font_size: 20
             text: "Select your throw!"
             color: 0, 0, 0, 1
-            size_hint: (0.5, 0.5)
-        
+            size_hint: (0.5, 0.2)
+
         Label:
-            id: scoreStatus
+            id: winLabel
             font_size: 20
             color: 0,0,0,1
-            size_hint: (0.5, 0.5)
+            size_hint: (0.5, 0.2)
 
-
+        Label:
+            id: score
+            font_size: 20
+            color: 0,0,0,1
+            size_hint: (0.5, 0.2)
+        
