@@ -39,6 +39,13 @@ class GameLayout(Widget):
         self.score.text = displayScore(self.player.score, self.computer.score)
         self.winLabel.text = displayWinner(result)
 
+    def resetGame(self, instance):
+        self.player.score = 0
+        self.computer.score = 0
+        self.computerRoll.text = "Select your throw!"
+        self.score.text = ""
+        self.winLabel.text = ""
+
 
 class RPSApp(App):
     def build(self):

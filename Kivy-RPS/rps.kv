@@ -1,3 +1,6 @@
+<Label>:
+    font_name: "RobotoMono-Regular"
+
 <GameLayout>
 
     winLabel:winLabel
@@ -6,6 +9,7 @@
     rock:rock
     computerRoll:computerRoll
     score:score
+    reset:reset
 
     GridLayout:
         
@@ -37,6 +41,22 @@
             padding: 20
             size_hint: (1, 0.5)
 
+
+
+            Button:
+                background_normal: ""
+                background_color: 151/255, 188/255, 98/255, 1
+                size_hint:(0.5, None)
+                pos_hint: {"center_y": 0.5}
+                height: 150
+                on_press: root.pressRock(self)
+                id: rock
+
+                Image:
+                    source: "resources/protest.png"
+                    center_x: self.parent.center_x
+                    center_y: self.parent.center_y
+
             Button:
                 background_normal: ""
                 background_color: 151/255, 188/255, 98/255, 1
@@ -65,20 +85,6 @@
                     center_x: self.parent.center_x
                     center_y: self.parent.center_y
 
-            Button:
-                background_normal: ""
-                background_color: 151/255, 188/255, 98/255, 1
-                size_hint:(0.5, None)
-                pos_hint: {"center_y": 0.5}
-                height: 150
-                on_press: root.pressRock(self)
-                id: rock
-
-                Image:
-                    source: "resources/protest.png"
-                    center_x: self.parent.center_x
-                    center_y: self.parent.center_y
-
         Label:
             id: computerRoll
             font_size: 20
@@ -92,9 +98,31 @@
             color: 0,0,0,1
             size_hint: (0.5, 0.2)
 
-        Label:
-            id: score
-            font_size: 20
-            color: 0,0,0,1
-            size_hint: (0.5, 0.2)
+
+
+        BoxLayout:
         
+            orientation: "vertical"
+            spacing: 20
+            padding: 20
+            size_hint: (1, 0.4)
+
+            Label:
+                id: score
+                font_size: 20
+                color: 0,0,0,1
+
+            Button:
+                id: reset
+                text: "Reset Game"
+                font_size: 20
+                color: 0, 0, 0, 1
+                size_hint_x: None
+                width: 200
+                pos_hint: {"center_x": 0.5}
+                background_normal: ""
+                background_color: 151/255, 188/255, 98/255, 1
+                on_press: root.resetGame(self)
+
+
+            
