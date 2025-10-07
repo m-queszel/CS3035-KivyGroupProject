@@ -49,7 +49,7 @@ class GameLayout(Widget):
 
 class RPSApp(App):
     def build(self):
-        Window.clearcolor = (1, 1, 1, 1)
+        Window.clearcolor = (240/255, 244/255, 195/255, 1)
         return GameLayout()
 
 
