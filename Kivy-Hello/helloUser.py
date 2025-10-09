@@ -21,7 +21,7 @@ class KivyProjApp(App):
 
         def update_label(instance):
             greetLabel.text = f"Hello, {userTextField.text}!"
-
+            userTextField.text = ""
         button.bind(on_press=update_label)
 
         # Add widgets to BoxLayout
